@@ -12,10 +12,6 @@
             "dest": "/public/build/$1"
         },
         {
-            "src": "/storage/(.*)",
-            "dest": "/public/storage/$1"
-        },
-        {
             "src": "/favicon.ico",
             "dest": "/public/favicon.ico"
         },
@@ -27,10 +23,5 @@
             "src": "/(.*)",
             "dest": "/api/index.php"
         }
-    ],
-    "env": {
-        "APP_ENV": "production",
-        "APP_DEBUG": "false"
-    },
-    "buildCommand": "composer install --no-dev --optimize-autoloader && npm install && npm run build"
+    ]
 }

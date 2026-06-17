@@ -60,9 +60,17 @@ class PageController extends Controller
         ->latest()
         ->first();
 
+    $slideshowProjects = Project::where('status', 'published')
+        ->whereNotNull('slug')
+        ->whereNotNull('image')
+        ->latest()
+        ->take(6)
+        ->get();
+
     return view('pages.works', compact(
         'projects',
         'featuredProject',
+        'slideshowProjects',
         'categories',
         'selectedCategory'
     ));
